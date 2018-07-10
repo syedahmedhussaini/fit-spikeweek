@@ -1,7 +1,7 @@
 mixin checkbox(title, label, name)
   label.block.ml-5.mb-6(for=name)
     input.float-left.-ml-5.mt-1(type="checkbox" id=name name=name)
-    span.block.text-pronounced-dark
+    span.block.font-bold.text-80.mb-1.mr-1.leading-tight
       = title
-    span.block.text-subdued
+    span.block.text-60.leading-normal
       = label

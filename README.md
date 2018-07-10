@@ -19,7 +19,7 @@ Financeit Spike week Project
 
 * `gulp`: runs the prototype
 * `gulp build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
-* `./node_modules/.bin/tailwind build content/scss/custom.css -o tmp/css/output.css` generates Tailwind css
+* `./node_modules/.bin/tailwind build content/scss/custom.css -c tailwind.js -o tmp/css/output.css` generates Tailwind css
 
 ## Using icon fonts
 

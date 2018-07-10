@@ -1,7 +1,7 @@
 mixin radio-question(question, name, options)
-  .mb-6
-    p.mb-3= question
+  .mb-6(role=radiogroup)
+    p.mb-3.text-80= question
     each option in options
-      .block
-        input.mb-2(type="radio" name=name value=option)
-        span= option
+      label.block(role=radio)
+        input.mb-2.mr-2(type="radio" name=name value=option)
+        span.text-sm.text-80= option

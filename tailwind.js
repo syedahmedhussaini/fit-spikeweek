@@ -45,11 +45,13 @@ View the full documentation at https://tailwindcss.com.
 
 let fontColors = {
   'link': '#006be3',
-  'subdued': 'rgba(35,40,49,0.6)',
-  'default': 'rgba(35,40,49,0.8)',
-  'pronounced': '#002539',
-  'pronounced-dark': '#4f535a',
-  'red': '#ff0d00'
+  'red': '#ff0d00',
+  
+  '40':'#a7a9ad',
+  '60': '#7b7e83', 
+  '80': '#4f535a',
+  '100': '#232831',
+  'black': '#181a21'
 
 }
 

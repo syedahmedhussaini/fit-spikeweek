@@ -7,13 +7,21 @@ body {
   @apply font-sans;
 }
 
+h3 {
+  @apply
+    text-2xl
+    mb-4
+    font-display
+    font-semibold
+    text-80;
+}
+
 .input-group label {
   @apply 
     block 
     mb-1
-    text-xs
-    tracking-wide 
-    text-subdued;
+    text-sm
+    text-60;
 }
 
 .input-field {
@@ -28,14 +36,14 @@ body {
     px-2
     py-2
     text-base 
-    text-subdued
+    text-80
     leading-tight;
 }
 
 .input-field:hover, .input-field:active, .input-field:focus {
   @apply
     border-fit-blue-darkest
-    text-pronounced;
+    text-100;
 }
 
 .stack {
