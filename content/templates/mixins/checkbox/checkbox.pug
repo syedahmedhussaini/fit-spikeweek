@@ -1,0 +1,7 @@
+mixin checkbox(title, label, name)
+  label.block.ml-5.mb-6(for=name)
+    input.float-left.-ml-5.mt-1(type="checkbox" id=name name=name)
+    span.block.font-bold.text-grey-darkest
+      = title
+    span.block.text-grey-darkest.opacity-75
+      = label

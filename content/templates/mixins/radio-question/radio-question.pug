@@ -1,0 +1,7 @@
+mixin radio-question(question, name, options)
+  .mb-6
+    p.mb-3= question
+    each option in options
+      .block
+        input.mb-2(type="radio" name=name value=option)
+        span= option
