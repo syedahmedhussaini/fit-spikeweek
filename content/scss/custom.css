@@ -3,36 +3,38 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-sans;
+}
+
 .input-group label {
   @apply 
     block 
+    mb-1
     text-xs
-    text-grey-dark
     tracking-wide 
-    text-grey-darker
-    mb-1;
+    text-subdued;
 }
 
 .input-field {
   @apply 
-    text-base 
-    bg-grey-lighter 
+    bg-fit-grey-lightest
     appearance-none 
-    border-grey-light 
-    text-black
-    block
+    border-fit-grey-lighter
     w-full
+    block
     border
     rounded-sm 
     px-2
     py-2
-    leading-tight
+    text-base 
+    text-subdued
+    leading-tight;
 }
 
 .input-field:hover, .input-field:active, .input-field:focus {
   @apply
-    border-blue-darkest
-    text-blue-darkest
-    opacity-75
+    border-fit-blue-darkest
+    text-pronounced;
 }
 

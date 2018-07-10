@@ -43,8 +43,26 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
+let fontColors = {
+  'link': '#006be3',
+  'subdued': 'rgba(35,40,49,0.6)',
+  'default': 'rgba(35,40,49,0.8)',
+  'pronounced': '#002539',
+  'pronounced-dark': '#4f535a',
+  'red': '#ff0d00'
+
+}
+
 let colors = {
   'transparent': 'transparent',
+
+  'fit-grey-lightest': '#eceff3',
+  'fit-grey-lighter': '#c8d0dc',  
+  'fit-grey-light': 'rgba(35,40,49,0.6)',
+  'fit-grey': 'rgba(35,40,49,0.8)',
+  'fit-grey-dark': '#4f535a',
+  'fit-blue': '#006be3',
+  'fit-blue-darkest': '#002539',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',
@@ -193,7 +211,23 @@ module.exports = {
   */
 
   fonts: {
+    'display': [
+      'Cabin',
+      'system-ui',
+      'BlinkMacSystemFont',
+      '-apple-system',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
+    ],
     'sans': [
+      'Noto Sans',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -341,7 +375,7 @@ module.exports = {
   |
   */
 
-  textColors: colors,
+  textColors: fontColors,
 
 
   /*
