@@ -7,12 +7,19 @@ body {
   @apply font-sans;
 }
 
+h3 {
+  @apply
+    text-2xl
+    font-display
+    font-semibold
+    text-pronounced;
+}
+
 .input-group label {
   @apply 
     block 
-    mb-1
-    text-xs
-    tracking-wide 
+    mb-2
+    text-sm
     text-subdued;
 }
 
