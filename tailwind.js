@@ -44,9 +44,13 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let fontColors = {
+  'white': '#ffffff',
+
+  // Accent colors
   'link': '#006be3',
   'red': '#ff0d00',
   
+  // Text Grays
   '40':'#a7a9ad',
   '60': '#7b7e83', 
   '80': '#4f535a',

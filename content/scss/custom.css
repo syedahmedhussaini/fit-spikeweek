@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.appearance-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 body {
   @apply font-sans;
 }
@@ -24,6 +30,7 @@ h3 {
     text-60;
 }
 
+
 .input-field {
   @apply 
     bg-fit-grey-lightest
@@ -40,9 +47,15 @@ h3 {
     leading-tight;
 }
 
-.input-field:hover, .input-field:active, .input-field:focus {
+.select-input-field {
+  @apply bg-white shadow-inner; 
+}
+
+.input-field:hover, .input-field:active, .input-field:focus, .select-input-field:hover, .select-input-field:active, .select-input-field:focus {
+
   @apply
     border-fit-blue-darkest
+    shadow-none
     text-100;
 }
 
@@ -74,3 +87,16 @@ h3 {
   }
 }
 
+
+button.primary {
+  @apply 
+    text-white 
+    px-10
+    py-5
+    rounded-sm
+    uppercase
+    bg-fit-blue
+    font-display
+    text-xl
+    tracking-wide;
+}
