@@ -9,6 +9,15 @@
   appearance: none;
 }
 
+.sg-container {
+  @apply
+    bg-white
+    shadow-lg
+    mx-auto
+    py-8
+    mt-8;
+}
+
 body {
   @apply font-sans;
 }

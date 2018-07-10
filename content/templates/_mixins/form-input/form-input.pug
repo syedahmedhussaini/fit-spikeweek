@@ -1,0 +1,33 @@
+mixin input(label, type, name)
+  .input-group(class!=attributes.class)
+    label(for=name)= label
+    input.input-field(type=type id=name name=name)
+    if block
+      p.text-grey-dark.text-xs.italic
+        block
+
+mixin select(label, name)
+  .input-group
+    label(for=name)= label
+    .relative.block
+      select.input-field.select-input-field.pr-8.appearance-reset(id=name name=name)
+        block
+      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2.text-40
+        svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
+          path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+
+mixin radio-question(question, name, options)
+  fieldset.mb-6(role=radiogroup)
+    legend.mb-3.text-80= question
+    each option in options
+      label.block(role=radio)
+        input.mb-2.mr-2(type="radio" name=name value=option)
+        span.text-sm.text-80= option
+
+mixin checkbox(title, label, name)
+  label.block.ml-5.mb-6(for=name)
+    input.float-left.-ml-5.mt-1(type="checkbox" id=name name=name)
+    span.block.font-bold.text-80.mb-1.mr-1.leading-tight
+      = title
+    span.block.text-60.leading-normal
+      = label

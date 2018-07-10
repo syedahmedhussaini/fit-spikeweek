@@ -1,0 +1,9 @@
+extends field-example
+
+block body
+  .container.sg-container
+    form.max-w-md.mx-auto.px-4
+      +radio-question(
+        'Do you have future plans to expand your business?', 
+        'futureExpandPlans', 
+        ['Yes', 'No'])
