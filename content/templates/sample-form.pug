@@ -12,6 +12,14 @@ block body
     form.max-w-sm.mx-auto.px-4
       fieldset
 
+        h3 Password creation
+        .flex.flex-wrap.mb-4
+          .stack(class="w-full sm:w-1/2 pr-2")
+            .item
+              +input('Password', 'text', 'password')
+
+        +divider
+
         h3 Business Information
         .flex.flex-wrap.mb-4
           .stack(class="w-full sm:w-1/2 pr-2")
