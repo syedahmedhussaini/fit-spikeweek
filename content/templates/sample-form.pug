@@ -16,7 +16,7 @@ block body
       h1.text-xl.text-fit-default.mt-8.mb-4 Business Information
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +input('Company Name', 'text', 'companyname')
+          +input('Company Name', 'text', 'companyname', 'error', 'That seems like a made up company name. Try again.')
         .item(class="w-full sm:w-1/2")
           +input('Business Address', 'text', 'businessaddress')
         .item(class="w-full sm:w-1/2")
@@ -45,7 +45,7 @@ block body
         .item(class="w-full sm:w-1/2")
           +input('Organization Type', 'text', 'organizationtype')
         .item(class="w-full sm:w-1/2")
-          +input('Years in business', 'text', 'yearsinbusiness')
+          +input('Years in business', 'number', 'yearsinbusiness')
 
       +radio-question(
         'Is your business eCommerce exclusive??', 
@@ -54,9 +54,9 @@ block body
 
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +input('Typical no. of sales per week', 'text', 'salesperweek')
+          +input('Typical no. of sales per week', 'tel', 'salesperweek')
         .item(class="w-full sm:w-1/2")
-          +input('Average transaction size', 'text', 'avgtransactionsize')
+          +input('Average transaction size', 'number', 'avgtransactionsize')
 
       +radio-question(
         'Do you have future plans to expand your business?', 

@@ -34,15 +34,13 @@ h3 {
 .input-group label {
   @apply 
     block 
-    mb-1
-    text-sm
-    text-60;
+    mb-2
+    text-base;
 }
 
 
 .input-field {
   @apply 
-    bg-fit-grey-lightest
     appearance-none 
     border-fit-grey-lighter
     w-full
@@ -51,7 +49,7 @@ h3 {
     rounded-sm 
     px-2
     py-2
-    text-base 
+    text-lg 
     text-80
     leading-tight;
 }

@@ -69,6 +69,7 @@ let colors = {
   'fit-grey-dark': '#4f535a',
   'fit-blue': '#006be3',
   'fit-blue-darkest': '#002539',
+  'fit-red-lightest': 'rgba(255,13,0,0.1)',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

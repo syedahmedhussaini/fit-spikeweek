@@ -4,12 +4,12 @@ include ../_mixins/form-input/form-input
 
 block body
 
-  if error
-    p(style="color: red") Hey! Some fields were marked as invalid.
-
   .container.sg-container
    form.max-w-md.mx-auto.px-4
       h1.text-xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +input('Password', 'password', 'password')
+          if error
+            +input('Password', 'password', 'password', 'error', 'Here is a sample error message')
+          else
+            +input('Password', 'password', 'password', 'default')

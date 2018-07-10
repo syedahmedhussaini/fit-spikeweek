@@ -1,10 +1,14 @@
-mixin input(label, type, name)
+mixin input(label, type, name, inputState, errorMessage)
+
   .input-group(class!=attributes.class)
-    label(for=name)= label
-    input.input-field(type=type id=name name=name)
+    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
+    input.input-field(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "bg-fit-grey-lightest")
     if block
       p.text-grey-dark.text-xs.italic
         block
+    if inputState === 'error'
+      p.text-red.text-sm.my-2.leading-normal= errorMessage
+
 
 mixin select(label, name)
   .input-group
