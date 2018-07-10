@@ -2,3 +2,37 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+.input-group label {
+  @apply 
+    block 
+    text-xs
+    text-grey-dark
+    tracking-wide 
+    text-grey-darker
+    mb-1;
+}
+
+.input-field {
+  @apply 
+    text-base 
+    bg-grey-lighter 
+    appearance-none 
+    border-grey-light 
+    text-black
+    block
+    w-full
+    border
+    rounded-sm 
+    px-2
+    py-2
+    leading-tight
+}
+
+.input-field:hover, .input-field:active, .input-field:focus {
+  @apply
+    border-blue-darkest
+    text-blue-darkest
+    opacity-75
+}
+

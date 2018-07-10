@@ -1,14 +1,14 @@
 mixin input(label, type, name)
   .input-group(class!=attributes.class)
-    label.block.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for=name)= label
-    input.appearance-none.block.w-full.bg-grey-lighter.text-grey-darker.border.border-grey-lighter.rounded.py-3.px-4.leading-tight(type=type id=name name=name)
+    label(for=name)= label
+    input.input-field(type=type id=name name=name)
     if block
       p.text-grey-dark.text-xs.italic
         block
 
 mixin select(label, name)
   .input-group
-    label.block.tracking-wide.text-grey-darker.text-xs.font-bold.mb-2(for=name)= label
+    label(for=name)= label
     .relative.block
-      select.block.appearance-none.w-full.bg-grey-lighter.border.border-grey-lighter.text-grey-darker.py-3.px-4.pr-8.rounded.leading-tight(id=name name=name)
+      select.input-field.pr-8(id=name name=name)
         block
