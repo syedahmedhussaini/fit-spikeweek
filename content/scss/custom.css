@@ -38,3 +38,8 @@ body {
     text-pronounced;
 }
 
+.item {
+  @apply
+    mb-8
+}
+
