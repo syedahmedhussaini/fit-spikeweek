@@ -38,8 +38,31 @@ body {
     text-pronounced;
 }
 
-.item {
-  @apply
-    mb-8
+.stack {
+  @apply flex flex-wrap
+}
+
+.stack .item {
+  @apply mb-8
+}
+
+.stack .stack .item:nth-child(odd) {
+  @apply pr-2
+}
+
+.stack .stack .item:nth-child(even) {
+  @apply pl-2
+}
+
+@screen sm {
+  .stack .item:nth-child(odd) {
+    @apply pr-2
+  }
+  .stack .item:nth-child(even) {
+    @apply pl-2
+  }
+  .stack .stack .item:nth-child(odd) {
+    @apply pl-2
+  }
 }
 

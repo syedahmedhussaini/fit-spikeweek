@@ -8,95 +8,82 @@ include mixins/radio-question/radio-question
 
 block body
 
-  .container.mx-auto.border.border-red.mt-8
+  .container.mx-auto.border.border-red.mt-8.text-pronounced-dark.text-base
     form.max-w-sm.mx-auto.px-4
-      
-        h1.text-xl.text-grey-darkest.mt-8.mb-4 Business Information
-        .flex.flex-wrap.mb-4
-          .stack(class="w-full sm:w-1/2 pr-2")
-            .item
-              +input('Company Name', 'text', 'companyname')
-            .item
-              +input('Business Address', 'text', 'businessaddress')
-            .item
-              +input('City', 'text', 'city')
 
-          .stack(class="w-full sm:w-1/2 pl-2")
-            .item
-              +input('Legal Business name', 'text', 'legalbusinessname')
-            .item
-              +input('Business Address Line 2', 'text', 'businessaddress2')
-            .flex.flex-wrap
-              .stack(class="w-2/3 pr-1")
-                .item
-                  +input('Province', 'text', 'province')
-              .stack(class="w-1/3 pl-1")    
-                .item
-                  +input('Post Code', 'text', 'postal')  
+      h1.text-xl.text-fit-default.mt-8.mb-4 Business Information
+      .stack.mb-4
+        .item(class="w-full sm:w-1/2")
+          +input('Company Name', 'text', 'companyname')
+        .item(class="w-full sm:w-1/2")
+          +input('Business Address', 'text', 'businessaddress')
+        .item(class="w-full sm:w-1/2")
+          +input('City', 'text', 'city')
+        .item(class="w-full sm:w-1/2")
+          +input('Legal Business name', 'text', 'legalbusinessname')
+        .item(class="w-full sm:w-1/2")
+          +input('Business Address Line 2', 'text', 'businessaddress2')
+        .stack(class="w-full sm:w-1/2") 
+          .item(class="w-2/3")
+            +input('Province', 'text', 'province')
+          .item(class="w-1/3")
+            +input('Post Code', 'text', 'postal')  
 
-        +divider
+      +divider
 
-        h1.text-xl.text-grey-darkest.mt-8.mb-4 Business Details
-        .flex.flex-wrap.mb-4
-          .stack(class="w-full sm:w-1/2 pr-2")
-            .item
-              +input('Business Website', 'text', 'businesswebsite')
-            .item
-              +input('Years in business', 'text', 'yearsinbusiness')
+      h1.text-xl.text-fit-default.mt-8.mb-4Business Details
+      .stack.mb-4
+        .item(class="w-full sm:w-1/2")
+          +input('Business Website (Optional)', 'text', 'businesswebsite')
+        .item(class="w-full sm:w-1/2")
+          +input('Organization Type', 'text', 'organizationtype')
+        .item(class="w-full sm:w-1/2")
+          +input('Years in business', 'text', 'yearsinbusiness')
 
-          .stack(class="w-full sm:w-1/2 pl-2")
-            .item
-              +input('Organization Type', 'text', 'organizationtype')
+      +radio-question(
+        'Do you have future plans to expand your business?', 
+        'futureExpandPlans', 
+        ['Yes', 'No'])
 
-        +radio-question(
-          'Do you have future plans to expand your business?', 
-          'futureExpandPlans', 
-          ['Yes', 'No'])
+      .stack.mb-4
+        .item(class="w-full sm:w-1/2")
+          +input('Typical no. of sales per week', 'text', 'salesperweek')
+        .item(class="w-full sm:w-1/2")
+          +input('Average transaction size', 'text', 'avgtransactionsize')
 
-        .flex.flex-wrap.mb-4
-          .stack(class="w-full sm:w-1/2 pr-2")
-            .item
-              +input('Typical no. of sales per week', 'text', 'salesperweek')
+      +radio-question(
+        'Do you have future plans to expand your business?', 
+        'futureExpandPlans', 
+        ['Yes', 'No'])
 
-          .stack(class="w-full sm:w-1/2 pl-2")
-            .item
-              +input('Average transaction size', 'text', 'avgtransactionsize')
+      +radio-question(
+        'Do you currently offer financing to your customer?', 
+        'financingToCustomer', 
+        ['Yes', 'No'])     
 
-        +radio-question(
-          'Do you have future plans to expand your business?', 
-          'futureExpandPlans', 
-          ['Yes', 'No'])
+      p.mb-4
+        | Select the categories that apply to your business.
 
-        +radio-question(
-          'Do you currently offer financing to your customer?', 
-          'financingToCustomer', 
-          ['Yes', 'No'])     
+      each vertical in contentData.formData.verticals
+        +checkbox(vertical.title, vertical.label, vertical.name)
 
-        p.mb-4
-          | Select the categories that apply to your business.
+      +divider
 
-        each vertical in contentData.formData.verticals
-          +checkbox(vertical.title, vertical.label, vertical.name)
+      .text-center.mb-16
+        +button('Continue')(class='bg-blue')   
+  
 
-        +divider
+      //- .flex.flex-wrap.-mx-3.mb-6
+      //-   +input('Business Website (Optional)', 'text', 'website')
 
-        .text-center.mb-16
-          +button('Continue')(class='bg-blue')   
-      
+        //- +select('Organization Type', 'text', 'orgtype')
+        //-   option Corporation
+        //-   option Family Business
+        //-   option Chocolate factory
+          
+      //-   +input('Years in Business', 'tel', 'yearsinbusiness')
 
-
-
-        //- .flex.flex-wrap.-mx-3.mb-6
-        //-   +input('Business Website (Optional)', 'text', 'website')
-
-          //- +select('Organization Type', 'text', 'orgtype')
-          //-   option Corporation
-          //-   option Family Business
-          //-   option Chocolate factory
-            
-        //-   +input('Years in Business', 'tel', 'yearsinbusiness')
-
-        //-   +select('Test dropdown', 'testdrop')
-        //-     option Value 1
-        //-     option Value 2
-        //-     option Value 3
+      //-   +select('Test dropdown', 'testdrop')
+      //-     option Value 1
+      //-     option Value 2
+      //-     option Value 3
