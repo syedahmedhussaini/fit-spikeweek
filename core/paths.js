@@ -48,6 +48,9 @@ module.exports = {
       sourceDirectory: path.join(contentPath, 'icon-font-source/'),
       sourceFiles: path.join(contentPath, 'icon-font-source/*svg')
     },
+    customStyles: {
+      path: path.join(contentPath, 'scss/custom.css')
+    },
   },
   core: {
     path: corePath,

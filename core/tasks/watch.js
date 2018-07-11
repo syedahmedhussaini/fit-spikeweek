@@ -3,6 +3,7 @@ const watch = require('gulp-watch');
 const path = require('path');
 const browserSync = require('browser-sync');
 const paths = require('../paths');
+const execSync = require('child_process').execSync;
 
 module.exports = function () {
   global.isWatching = true;
@@ -14,4 +15,7 @@ module.exports = function () {
   watch(paths.content.assets.resources, () => gulp.start('copy:resources'));
   watch(paths.content.iconFont.sourceFiles, () => gulp.start('icon-font'));
   watch(paths.content.icons.sourceFiles, () => browserSync.reload());
+  watch(paths.content.customStyles.path, () => {
+    return execSync('./node_modules/.bin/tailwind build content/scss/custom.css -c tailwind.js -o tmp/css/output.css');
+  });
 };

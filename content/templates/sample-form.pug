@@ -12,6 +12,8 @@ block body
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           +input('Password', 'password', 'password')
+          .mt-3
+            +password-validations(contentData.formData.passwordValidations)
 
       h1.text-xl.text-fit-default.mt-8.mb-4 Business Information
       .stack.mb-4
@@ -48,7 +50,7 @@ block body
           +input('Years in business', 'number', 'yearsinbusiness')
 
       +radio-question(
-        'Is your business eCommerce exclusive??', 
+        'Is your business eCommerce exclusive?',
         'ecommerceExclusive', 
         ['Yes', 'No'])
 

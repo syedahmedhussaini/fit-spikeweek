@@ -67,33 +67,26 @@ h3 {
 }
 
 .stack {
-  @apply flex flex-wrap
+  @apply flex flex-wrap justify-between flex-row
 }
 
 .stack .item {
   @apply mb-8
 }
 
-.stack .stack .item:nth-child(odd) {
-  @apply pr-2
+.stack .item.w-1\/3 {
+  width: calc(33.33333% - 10px)
 }
 
-.stack .stack .item:nth-child(even) {
-  @apply pl-2
+.stack .item.w-2\/3 {
+  width: calc(66.66667% - 10px)
 }
 
 @screen sm {
-  .stack .item:nth-child(odd) {
-    @apply pr-2
-  }
-  .stack .item:nth-child(even) {
-    @apply pl-2
-  }
-  .stack .stack .item:nth-child(odd) {
-    @apply pl-2
+  .stack .sm\:w-1\/2 {
+    width: calc(50% - 10px);
   }
 }
-
 
 button.primary {
   @apply 
@@ -106,4 +99,18 @@ button.primary {
     font-display
     text-xl
     tracking-wide;
+}
+
+.password-checkbox input:checked ~ label {
+  @apply text-green
+}
+
+.password-checkbox input:checked ~ span {
+  @apply border-fit-green
+}
+
+.password-checkbox input:checked ~ span i {
+  top: -4px;
+  left: 1px;
+  @apply block
 }
