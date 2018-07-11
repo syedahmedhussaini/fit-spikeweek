@@ -43,15 +43,15 @@ mixin select(label, name, inputState)
         |   must be selected.
 
 mixin floatingSelect(label, name, inputState)
-  .input-group
-    label.text-sm(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
+  .bg-white.border-fit-grey-10.border.rounded-lg.px-3.py-1.shadow-inner(class='hover:border-fit-blue hover:no-shadow')
+    label.text-xs(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
     .relative.block
-      select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
+      select.bg-transparent.pb-2.text-lg.pr-8.w-full.appearance-reset(id=name name=name)
         option Select
         block
-      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2(for=name class= inputState ==="error" ? "text-red" : "text-40")
-        svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
-          path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+      i.fa.fa-angle-down.text-xl.text-blue.pin-y.pin-r.absolute.pointer-events-none(class='-mt-2')
+
+
     if inputState === 'error'
       p.text-red.text-sm.my-2.leading-normal 
         = label

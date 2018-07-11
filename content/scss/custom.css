@@ -68,7 +68,7 @@ h3 {
   @apply bg-white shadow-inner; 
 }
 
-input:hover, input:active, input:focus {
+input:hover, input:active, input:focus, select:hover, select:active, select:focus {
   @apply outline-none;
 
 }
