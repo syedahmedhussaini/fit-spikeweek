@@ -78,7 +78,7 @@ block body
         ['Yes', 'No'])     
 
       fieldset
-        legend.mb-4 Select the categories that apply to your business.
+        legend.mb-4.leading-normal Select the categories that apply to your business.
         each vertical in contentData.formData.verticals
           +checkbox(vertical.title, vertical.label, vertical.name)
 

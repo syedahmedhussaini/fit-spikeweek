@@ -1,9 +1,9 @@
 extends /templates/_layouts/master
 
-include _mixins/form-input/form-input
-include _mixins/divider/divider
-include _mixins/button/button
-include _mixins/static-content/static-content
+include ../_mixins/form-input/form-input
+include ../_mixins/divider/divider
+include ../_mixins/button/button
+include ../_mixins/static-content/static-content
 
 block body
 
@@ -107,6 +107,7 @@ block body
       +divider
 
       .text-center.mb-16.mt-10
-        +button('Continue')
-
+        a.primary.text-white.px-10.h-12.w-64.rounded.uppercase.bg-fit-blue.font-sans.font-bold.text-xl.tracking-wide(href='/signup-path/next.html')
+          | Continue
+          
     +footer

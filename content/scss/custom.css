@@ -53,6 +53,7 @@ h3 {
 .input-field {
   @apply 
     appearance-none 
+    shadow-none
     border-fit-grey-10
     w-full
     block
@@ -131,6 +132,14 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
     px-3;
     
 
+}
+
+.floating-label.activated .clear-field {
+  @apply opacity-0;
+}
+
+.floating-label.activated.active .clear-field {
+  @apply opacity-100;
 }
 
 .floating-label.activated label {

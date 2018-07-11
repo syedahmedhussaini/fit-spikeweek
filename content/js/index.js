@@ -18,17 +18,20 @@ $(function(){
     var clearButton = $(this).next('.clear-field');
 
     if(this.value !== ""){
-      clearButton.removeClass('hidden')
+      clearButton.removeClass('opacity-0')
     } else {
-      clearButton.addClass('hidden')
+      clearButton.addClass('opacity-0')
     }
-  }).focusout(function(){
+  }).keyup(function(){
     $(this).trigger("checkval");
 
-  }).on("focus",function(){
-    $(this).next('.clear-field').removeClass('hidden')
+  }).focusout(function(){
+    $(this).next('.clear-field').addClass('opacity-0');
 
-  });
+  }).on("focus",function(){
+    $(this).trigger("checkval");
+
+  });;
 });
 
 
