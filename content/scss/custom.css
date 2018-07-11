@@ -99,6 +99,9 @@ input:hover, input:active, input:focus {
     text-lg;
 }
 
+.floating-label.inactive .clear-field {
+  @apply hidden;
+}
 .floating-label.inactive input {
   @apply
     block
@@ -108,27 +111,24 @@ input:hover, input:active, input:focus {
     bg-transparent;
 }
 
-
-
-.floating-label.active {
+.floating-label.activated {
   @apply 
     pt-1
-    border-fit-blue-darkest
     pb-2
     px-3;
 
 }
 
-.floating-label.active label {
+.floating-label.activated label {
   @apply
     relative
-    text-80
+    text-60
     text-xs
     mb-1;
 
   }
 
-.floating-label.active input {
+.floating-label.activated input {
   @apply
     block
     w-full
@@ -136,6 +136,14 @@ input:hover, input:active, input:focus {
     text-lg;
 }
 
+
+.floating-label.active {
+  @apply border-fit-blue-darkest;
+}
+
+.floating-label.active label {
+  @apply text-80;
+}
 
 .stack {
   @apply flex flex-wrap justify-between flex-row

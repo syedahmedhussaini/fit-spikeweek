@@ -1,32 +1,62 @@
 require('../../core/js/index');
 
 
+
+
 $(function(){
+  $(".input-group input").bind("checkval",function(){
+    var clearButton = $(this).next('.clear-field');
+
+    if(this.value !== ""){
+      clearButton.removeClass('hidden')
+    } else {
+      clearButton.addClass('hidden')
+    }
+  }).focusout(function(){
+    $(this).trigger("checkval");
+
+  }).on("focus",function(){
+    $(this).next('.clear-field').removeClass('hidden')
+
+  });
+});
+
+
+$('.clear-field').on("click",function(){
+  console.log('fire');
+  var input = $(this).prev('input');
+  input.val("");
+  input.focus();
+});
+
+$(function(){
+  var containerTriggered = "activated";
   var containerOn = "active";
   var containerOff = "inactive";
 
   $(".floating-label input").bind("checkval",function(){
     var label = $(this).prev("label");
-    var container = $(this).parent(".floating-label")
+    var container = $(this).parents(".floating-label")
 
     // CLEAN THIS UP. SHOULD DEBOUNCE OR THROTTLE THIS.
 
     if(this.value !== ""){
       console.log('Value is not empty');
       label.removeClass('text-red').addClass('text-60')
-      container.addClass(containerOn).removeClass(containerOff);
+      container.addClass(containerTriggered).removeClass(containerOff);
 
     } else {
 
       console.log('value is empty');
-      container.removeClass(containerOn).addClass(containerOff);
+      container.removeClass(containerTriggered).addClass(containerOff);
 
     }
   }).focusout(function(){
     $(this).trigger("checkval");
+    $(this).parents(".floating-label").removeClass(containerOn)
 
   }).on("focus",function(){
-    $(this).parent(".floating-label").addClass(containerOn).removeClass(containerOff);
+    $(this).parents(".floating-label").addClass(containerOn).addClass(containerTriggered).removeClass(containerOff);
     console.log('focussed');
 
   });

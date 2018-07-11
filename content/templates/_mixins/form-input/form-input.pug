@@ -2,7 +2,10 @@ mixin input(label, type, name, inputState, errorMessage)
 
   .input-group(class!=attributes.class)
     label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
-    input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "")
+    .relative.block
+      input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "")
+      i.hidden.fa.fa-times-circle.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
+
     if block
       block
     if inputState === 'error'
@@ -12,8 +15,11 @@ mixin input(label, type, name, inputState, errorMessage)
 mixin floatingLabelInput(label, type, name, inputState, errorMessage)
   .input-field.floating-label.inactive(class!=attributes.class)
     label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
-    input(type=type id=name name=name)
-    
+    .relative.block
+      input(type=type id=name name=name)
+      i.fa.fa-times-circle.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer(class='-mt-2')
+      
+
   if block
     block
   if inputState === 'error'
