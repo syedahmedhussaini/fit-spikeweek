@@ -9,13 +9,22 @@
   appearance: none;
 }
 
+a {
+  @apply font-sans text-base text-blue no-underline;
+}
+
+span.separator:before {
+  content: "•";
+  @apply text-100 px-1;
+}
+
 .sg-container {
   @apply
     bg-white
     shadow-lg
     mx-auto
     py-8
-    mt-8;
+    my-8;
 }
 
 body {
@@ -93,6 +102,8 @@ button.primary {
     text-white 
     px-10
     py-5
+    w-64
+    h-16
     rounded-sm
     uppercase
     bg-fit-blue
