@@ -49,6 +49,8 @@ let fontColors = {
   // Accent colors
   'link': '#006be3',
   'red': '#ff0d00',
+  'green': '#00b74f',
+  'blue': '#006be3',
   
   // Text Grays
   '40':'#a7a9ad',
@@ -70,6 +72,7 @@ let colors = {
   'fit-blue': '#006be3',
   'fit-blue-darkest': '#002539',
   'fit-red-lightest': 'rgba(255,13,0,0.1)',
+  'fit-green': '#00b74f',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

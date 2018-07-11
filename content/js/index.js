@@ -1,4 +1,5 @@
 require('../../core/js/index');
+<<<<<<< HEAD
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
 // N milliseconds. If `immediate` is passed, trigger the function on the
@@ -54,3 +55,32 @@ $(function(){
 
   });
 });
+=======
+
+$('#password').keyup(function(e) {
+  checkPasswordValidations(e.target.value).forEach(function(validation) {
+    $('#' + validation.id).attr('checked', validation.active);
+  });
+});
+
+function checkPasswordValidations(value) {
+  var validations = [];
+
+  validations.push({
+    id: 'minLength',
+    active: /[0-9a-zA-Z]{8,}/.test(value)
+  });
+
+  validations.push({
+    id: 'upperLowerCharacters',
+    active: /(?=.*[a-z])(?=.*[A-Z])/.test(value)
+  });
+
+  validations.push({
+    id: 'numbersAndLetters',
+    active: /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(value)
+  });
+
+  return validations;
+}
+>>>>>>> 63d50b3af5388be67c3fa93d071d16f1173f3561

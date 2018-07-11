@@ -27,6 +27,24 @@ const formData = {
       label: 'Car, truck and SUV',
       name: 'autoCheckbox'
     }
+  ],
+
+  passwordValidations: [
+    {
+      title: 'Min. 8 characters',
+      id: 'minLength',
+      active: false
+    },
+    {
+      title: 'Upper and lowercase characters',
+      id: 'upperLowerCharacters',
+      active: false
+    },
+    {
+      title: 'Use numbers and letters',
+      id: 'numbersAndLetters',
+      active: false
+    }
   ]
 };
 

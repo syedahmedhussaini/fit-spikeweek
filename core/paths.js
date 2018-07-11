@@ -9,6 +9,7 @@ const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
 module.exports = {
+  tailwind: 'tailwind.js',
   content: {
     path: contentPath,
     docs: path.join(contentPath, 'docs/**/*'),
@@ -47,6 +48,9 @@ module.exports = {
     iconFont: {
       sourceDirectory: path.join(contentPath, 'icon-font-source/'),
       sourceFiles: path.join(contentPath, 'icon-font-source/*svg')
+    },
+    customStyles: {
+      path: path.join(contentPath, 'scss/custom.css')
     },
   },
   core: {

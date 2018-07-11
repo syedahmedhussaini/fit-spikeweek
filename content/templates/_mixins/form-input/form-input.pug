@@ -53,3 +53,11 @@ mixin checkbox(title, label, name)
       = title
     span.block.text-60.leading-normal
       = label
+
+mixin password-validations(validations)
+  each validation in validations
+    .password-checkbox.mt-2
+      input.hidden(type="checkbox" id=validation.id checked=validation.active)
+      span.inline-block.h-3.w-3.border.border-fit-grey-dark.rounded-lg.-mb-px.relative
+        i.hidden.fa.fa-check.text-green.text-sm.absolute
+      label.text-xs.text-80= validation.title
