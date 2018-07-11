@@ -3,11 +3,15 @@ extends /templates/_layouts/master
 include _mixins/form-input/form-input
 include _mixins/divider/divider
 include _mixins/button/button
+include _mixins/static-content/static-content
 
 block body
 
   .container.sg-container
-   form.max-w-md.mx-auto.px-4
+
+    +header
+
+    form.max-w-md.mx-auto.px-4
       h1.text-xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")

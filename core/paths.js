@@ -9,6 +9,7 @@ const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
 module.exports = {
+  tailwind: 'tailwind.js',
   content: {
     path: contentPath,
     docs: path.join(contentPath, 'docs/**/*'),

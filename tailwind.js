@@ -50,6 +50,7 @@ let fontColors = {
   'link': '#006be3',
   'red': '#ff0d00',
   'green': '#00b74f',
+  'blue': '#006be3',
   
   // Text Grays
   '40':'#a7a9ad',
