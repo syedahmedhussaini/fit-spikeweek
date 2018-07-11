@@ -13,3 +13,15 @@ block body
             +input('Password', 'password', 'password', 'error', 'Here is a sample error message')
           else
             +input('Password', 'password', 'password', 'default')
+
+        .item(class="w-full sm:w-1/2")
+          if error
+            +select('Province', 'province', 'error')
+              option Alberta
+              option Ontario
+              option Quebec 
+          else
+            +select('Province', 'province')
+              option Alberta
+              option Ontario
+              option Quebec 

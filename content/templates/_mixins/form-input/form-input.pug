@@ -2,31 +2,49 @@ mixin input(label, type, name, inputState, errorMessage)
 
   .input-group(class!=attributes.class)
     label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
-    input.input-field(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "bg-fit-grey-lightest")
+    input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "")
     if block
-      p.text-grey-dark.text-xs.italic
-        block
+      block
     if inputState === 'error'
       p.text-red.text-sm.my-2.leading-normal= errorMessage
 
 
-mixin select(label, name)
+mixin floatingLabelInput(label, type, name, inputState, errorMessage)
+  .input-field.floating-label.inactive(class!=attributes.class)
+    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
+    input(type=type id=name name=name)
+    
+  if block
+    block
+  if inputState === 'error'
+    p.text-red.text-sm.my-2.leading-normal= errorMessage
+
+
+
+
+
+
+mixin select(label, name, inputState)
   .input-group
-    label(for=name)= label
+    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
     .relative.block
-      select.input-field.select-input-field.pr-8.appearance-reset(id=name name=name)
+      select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
+        option Select
         block
-      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2.text-40
+      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2(for=name class= inputState ==="error" ? "text-red" : "text-40")
         svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
           path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-
+    if inputState === 'error'
+      p.text-red.text-sm.my-2.leading-normal 
+        = label
+        |   must be selected.
 mixin radio-question(question, name, options)
   fieldset.mb-6(role=radiogroup)
     legend.mb-3.text-80= question
     each option in options
       label.block(role=radio)
         input.mb-2.mr-2(type="radio" name=name value=option)
-        span.text-sm.text-80= option
+        span.text-80= option
 
 mixin checkbox(title, label, name)
   label.block.ml-5.mb-6(for=name)

@@ -31,6 +31,8 @@ h3 {
     text-80;
 }
 
+
+/* Generic Form styles */
 .input-group label {
   @apply 
     block 
@@ -43,13 +45,11 @@ h3 {
   @apply 
     appearance-none 
     border-fit-grey-lighter
+    bg-fit-grey-lightest
     w-full
     block
     border
     rounded-sm 
-    px-2
-    py-2
-    text-lg 
     text-80
     leading-tight;
 }
@@ -65,6 +65,60 @@ h3 {
     shadow-none
     text-100;
 }
+
+
+/* Floating labels */
+.floating-label.inactive {
+  @apply 
+    py-4
+    px-3
+    rounded-sm
+    cursor-pointer
+    overflow-hidden;
+}
+
+.floating-label.inactive label {
+  @apply
+    block
+    text-lg;
+}
+
+.floating-label.inactive input {
+  @apply
+    block
+    w-full
+    relative
+    -mt-5
+    bg-transparent;
+}
+
+
+
+.floating-label.active {
+  @apply 
+    pt-1
+    pb-2
+    bg-white
+    px-3;
+
+}
+
+.floating-label.active label {
+  @apply
+    relative
+    text-xs
+    mb-1;
+
+  }
+
+.floating-label.active input {
+  @apply
+    block
+    w-full
+    text-lg;
+
+}
+
 
 .stack {
   @apply flex flex-wrap
@@ -93,6 +147,7 @@ h3 {
     @apply pl-2
   }
 }
+
 
 
 button.primary {
