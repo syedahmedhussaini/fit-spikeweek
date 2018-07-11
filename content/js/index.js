@@ -1,6 +1,16 @@
 require('../../core/js/index');
 
 
+$('.clear-field').on("click",function(){
+  console.log('fire');
+  var input = $(this).prev('input');
+  var container = $(this).parents(".floating-label");
+  input.val("");
+  input.focus();
+  container.removeClass('error');
+  container.next('.error-message').addClass('hidden');
+
+});
 
 
 $(function(){
@@ -22,12 +32,6 @@ $(function(){
 });
 
 
-$('.clear-field').on("click",function(){
-  console.log('fire');
-  var input = $(this).prev('input');
-  input.val("");
-  input.focus();
-});
 
 $(function(){
   var containerTriggered = "activated";
@@ -44,11 +48,11 @@ $(function(){
       console.log('Value is not empty');
       label.removeClass('text-red').addClass('text-60')
       container.addClass(containerTriggered).removeClass(containerOff);
-
     } else {
 
       console.log('value is empty');
-      container.removeClass(containerTriggered).addClass(containerOff);
+      container.removeClass(containerTriggered).addClass(containerOff).removeClass('error');
+      container.next('.error-message').addClass('hidden');
 
     }
   }).focusout(function(){

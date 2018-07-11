@@ -12,14 +12,14 @@ block body
     +header
 
     form.max-w-md.mx-auto.px-4
-      h1.text-xl.text-fit-default.mt-8.mb-4 Password creation
+      h1.text-3xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           +input('Password', 'password', 'password')
           .mt-3
             +password-validations(contentData.formData.passwordValidations)
 
-      h1.text-xl.text-fit-default.mt-8.mb-4 Business Information
+      h1.text-3xl.text-fit-default.mt-8.mb-4 Business Information
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
@@ -48,7 +48,7 @@ block body
 
       +divider
 
-      h1.text-xl.text-fit-default.mt-8.mb-4 Business Details
+      h1.text-3xl.text-fit-default.mt-8.mb-4 Business Details
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
@@ -94,7 +94,7 @@ block body
 
       +divider
 
-      h1.text-xl.text-fit-default.mt-8.mb-4 One last thing...
+      h1.text-3xl.text-fit-default.mt-8.mb-4 One last thing...
       .stack.mb-2
         .item(class="w-full sm:w-1/2")
           +input('Referral code (optional)', 'text', 'referralcode')

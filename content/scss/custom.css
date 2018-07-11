@@ -33,7 +33,7 @@ body {
 
 h3 {
   @apply
-    text-2xl
+    text-3xl
     mb-4
     font-display
     font-semibold
@@ -46,7 +46,7 @@ h3 {
   @apply 
     block 
     mb-2
-    text-base;
+    text-sm;
 }
 
 
@@ -54,14 +54,15 @@ h3 {
   @apply 
     appearance-none 
     border-fit-grey-10
-    bg-fit-grey-5
     w-full
     block
     border
-    rounded-sm 
+    rounded
     text-80
     leading-tight;
 }
+
+
 
 .select-input-field {
   @apply bg-white shadow-inner; 
@@ -70,28 +71,40 @@ h3 {
 input:hover, input:active, input:focus {
   @apply outline-none;
 
-
 }
 
 .input-field:hover, .input-field:active, .input-field:focus, .select-input-field:hover, .select-input-field:active, .select-input-field:focus {
 
   @apply
     outline-none
-    border-fit-blue-darkest
+    border-fit-blue
     shadow-none
     text-100;
 }
 
+.input-field.error:focus, .input-field.error:hover {
+  @apply border-fit-red;
+}
 
 /* Floating labels */
+
+.floating-label {
+  @apply bg-fit-grey-5;
+}
 .floating-label.inactive {
   @apply 
     py-4
     px-3
-    rounded-sm
+    bg-fit-grey-5
+    rounded-lg
     cursor-pointer
     overflow-hidden;
 }
+
+.floating-label.inactive.error {
+  @apply bg-fit-red-lightest;
+}
+
 
 .floating-label.inactive label {
   @apply
@@ -116,13 +129,13 @@ input:hover, input:active, input:focus {
     pt-1
     pb-2
     px-3;
+    
 
 }
 
 .floating-label.activated label {
   @apply
     relative
-    text-60
     text-xs
     mb-1;
 
@@ -137,13 +150,20 @@ input:hover, input:active, input:focus {
 }
 
 
-.floating-label.active {
-  @apply border-fit-blue-darkest;
+.floating-label.error {
+  @apply bg-fit-red-lightest;
+}
+.floating-label.error label {
+  @apply text-red;
+}
+.floating-label.error.active {
+  @apply border-fit-red;
 }
 
-.floating-label.active label {
-  @apply text-80;
+.floating-label.active {
+  @apply border-fit-blue;
 }
+
 
 .stack {
   @apply flex flex-wrap justify-between flex-row
@@ -168,18 +188,7 @@ input:hover, input:active, input:focus {
 }
 
 button.primary {
-  @apply 
-    text-white 
-    px-10
-    py-5
-    w-64
-    h-16
-    rounded-sm
-    uppercase
-    bg-fit-blue
-    font-display
-    text-xl
-    tracking-wide;
+  
 }
 
 .password-checkbox input:checked ~ label {

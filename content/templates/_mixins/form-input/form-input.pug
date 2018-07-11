@@ -1,38 +1,35 @@
 mixin input(label, type, name, inputState, errorMessage)
 
   .input-group(class!=attributes.class)
-    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
+    label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
     .relative.block
-      input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest" : "")
-      i.hidden.fa.fa-times-circle.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
+      input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest error" : "bg-fit-grey-5")
+      i.hidden.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
 
     if block
       block
     if inputState === 'error'
-      p.text-red.text-sm.my-2.leading-normal= errorMessage
+      p.text-red.text-xs.my-2.leading-normal= errorMessage
 
 
 mixin floatingLabelInput(label, type, name, inputState, errorMessage)
-  .input-field.floating-label.inactive(class!=attributes.class)
-    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
+  .input-field.floating-label.inactive(class= inputState ==="error" ? "error" : "")
+    label(for=name)= label
     .relative.block
       input(type=type id=name name=name)
-      i.fa.fa-times-circle.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer(class='-mt-2')
+      i.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer(class='-mt-2')
       
 
   if block
     block
   if inputState === 'error'
-    p.text-red.text-sm.my-2.leading-normal= errorMessage
-
-
-
+    p.text-red.text-xs.my-2.leading-normal.error-message= errorMessage
 
 
 
 mixin select(label, name, inputState)
   .input-group
-    label(for=name class= inputState ==="error" ? "text-red" : "text-60")= label
+    label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
     .relative.block
       select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
         option Select
@@ -44,20 +41,39 @@ mixin select(label, name, inputState)
       p.text-red.text-sm.my-2.leading-normal 
         = label
         |   must be selected.
+
+mixin floatingSelect(label, name, inputState)
+  .input-group
+    label.text-sm(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
+    .relative.block
+      select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
+        option Select
+        block
+      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2(for=name class= inputState ==="error" ? "text-red" : "text-40")
+        svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
+          path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+    if inputState === 'error'
+      p.text-red.text-sm.my-2.leading-normal 
+        = label
+        |   must be selected.
+
+        
+
+
 mixin radio-question(question, name, options)
   fieldset.mb-6(role=radiogroup)
     legend.mb-3.text-80= question
     each option in options
       label.block(role=radio)
         input.mb-2.mr-2(type="radio" name=name value=option)
-        span.text-80= option
+        span.text-80.text-sm= option
 
 mixin checkbox(title, label, name)
   label.block.ml-5.mb-6(for=name)
     input.float-left.-ml-5.mt-1(type="checkbox" id=name name=name)
     span.block.font-bold.text-80.mb-1.mr-1.leading-tight
       = title
-    span.block.text-60.leading-normal
+    span.block.text-80.leading-normal
       = label
 
 mixin password-validations(validations)

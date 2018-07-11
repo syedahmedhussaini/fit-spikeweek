@@ -8,7 +8,7 @@ block body
 
   .container.sg-container
    form.max-w-lg.mx-auto.px-4
-      h1.text-xl.text-fit-default.mt-8.mb-4 Password creation
+      h1.text-3xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Password', 'password', 'password')
@@ -29,7 +29,7 @@ block body
           +floatingLabelInput('Business Address Line 2', 'text', 'businessaddress2')
         .stack(class="w-full sm:w-1/2") 
           .item(class="w-2/3")
-            +select('Province', 'province')
+            +floatingSelect('Province', 'province')
               option Alberta
               option Ontario
               option Quebec 
@@ -40,7 +40,7 @@ block body
 
       +divider
 
-      h1.text-xl.text-fit-default.mt-8.mb-4 Business Details
+      h1.text-3xl.text-fit-default.mt-8.mb-4 Business Details
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
@@ -85,4 +85,4 @@ block body
       +divider
 
       .text-center.mb-16
-        +button('Continue')
+        +floatingButton('Continue')

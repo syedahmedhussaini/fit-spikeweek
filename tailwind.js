@@ -75,7 +75,8 @@ let colors = {
   'fit-blue': '#006be3',
   'fit-blue-darkest': '#002539',
 
-  'fit-red-lightest': 'rgba(255,13,0,0.1)',
+  'fit-red-lightest': '#ffe6e5',
+  'fit-red': '#ff0d00',
   'fit-green': '#00b74f',
 
   'black': '#22292f',
@@ -489,8 +490,8 @@ module.exports = {
   borderRadius: {
     'none': '0',
     'sm': '.125rem',
-    default: '.25rem',
-    'lg': '.5rem',
+    default: '2px',
+    'lg': '4px',
     'full': '9999px',
   },
 
@@ -575,6 +576,7 @@ module.exports = {
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',
+    '14': '3.5rem',
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',
