@@ -64,13 +64,17 @@ let fontColors = {
 let colors = {
   'transparent': 'transparent',
 
+  'fit-grey-5': 'rgba(0,37,57,0.05)',
+  'fit-grey-10': 'rgba(0,37,57,0.1)',
   'fit-grey-lightest': '#eceff3',
   'fit-grey-lighter': '#c8d0dc',  
   'fit-grey-light': 'rgba(35,40,49,0.6)',
   'fit-grey': 'rgba(35,40,49,0.8)',
   'fit-grey-dark': '#4f535a',
+
   'fit-blue': '#006be3',
   'fit-blue-darkest': '#002539',
+
   'fit-red-lightest': 'rgba(255,13,0,0.1)',
   'fit-green': '#00b74f',
 

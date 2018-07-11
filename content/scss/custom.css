@@ -53,8 +53,8 @@ h3 {
 .input-field {
   @apply 
     appearance-none 
-    border-fit-grey-lighter
-    bg-fit-grey-lightest
+    border-fit-grey-10
+    bg-fit-grey-5
     w-full
     block
     border
@@ -67,9 +67,16 @@ h3 {
   @apply bg-white shadow-inner; 
 }
 
+input:hover, input:active, input:focus {
+  @apply outline-none;
+
+
+}
+
 .input-field:hover, .input-field:active, .input-field:focus, .select-input-field:hover, .select-input-field:active, .select-input-field:focus {
 
   @apply
+    outline-none
     border-fit-blue-darkest
     shadow-none
     text-100;
@@ -106,8 +113,8 @@ h3 {
 .floating-label.active {
   @apply 
     pt-1
+    border-fit-blue-darkest
     pb-2
-    bg-white
     px-3;
 
 }
@@ -115,6 +122,7 @@ h3 {
 .floating-label.active label {
   @apply
     relative
+    text-80
     text-xs
     mb-1;
 
@@ -124,8 +132,8 @@ h3 {
   @apply
     block
     w-full
+    bg-transparent
     text-lg;
-
 }
 
 
