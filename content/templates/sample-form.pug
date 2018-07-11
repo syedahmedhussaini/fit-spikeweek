@@ -45,7 +45,11 @@ block body
         .item(class="w-full sm:w-1/2")
           +input('Business Website (Optional)', 'text', 'businesswebsite')
         .item(class="w-full sm:w-1/2")
-          +input('Organization Type', 'text', 'organizationtype')
+          +select('Organization Type', 'organizationtype')
+            option Corporation
+            option Partnership
+            option Limited Partnership
+            option Proprietorship
         .item(class="w-full sm:w-1/2")
           +input('Years in business', 'number', 'yearsinbusiness')
 
@@ -77,5 +81,17 @@ block body
 
       +divider
 
-      .text-center.mb-16
+      h1.text-xl.text-fit-default.mt-8.mb-4 One last thing...
+      .stack.mb-2
+        .item(class="w-full sm:w-1/2")
+          +input('Referral code (optional)', 'text', 'referralcode')
+        .item(class="w-full sm:w-1/2")
+          +select('How did you hear about us?', 'howdidyouhearaboutus')
+            option Advertisement
+            option Direct Mail
+            option In the News
+
+      +divider
+
+      .text-center.mb-16.mt-10
         +button('Continue')
