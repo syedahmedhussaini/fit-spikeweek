@@ -9,6 +9,10 @@
   appearance: none;
 }
 
+h1 {
+  @apply font-display tracking-normal-wide;
+}
+
 a, a:link, a:visited  {
   @apply font-sans text-blue no-underline;
 }
@@ -200,6 +204,12 @@ button.primary {
   
 }
 
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+/* PASSWORD CHECKBOXES */
+
 .password-checkbox input:checked ~ label {
   @apply text-green;
 }
@@ -213,14 +223,22 @@ button.primary {
   @apply block pin-l;
 }
 
-.checkbox-item input:checked ~ span {
-  @apply border-solid;
+/* CHECKBOXES FOR VERTICALS */
+
+.checkbox-item input:checked ~ span.checkbox {
+  @apply border-solid bg-fit-blue;
 }
 
-.checkbox-item input:checked ~ span i {
+.checkbox-item input:checked ~ span.checkbox i {
   @apply block;
 }
 
-.flex-center {
-  @apply flex justify-center items-center;
+/* RADIO BUTTONS */
+
+.radio-item input[type="radio"]:checked ~ span.radio {
+  @apply bg-white;
+}
+
+.radio-item input[type="radio"]:checked ~ span.radio span {
+  @apply block;
 }

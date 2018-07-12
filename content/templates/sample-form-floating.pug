@@ -3,21 +3,29 @@ extends /templates/_layouts/master
 include _mixins/form-input/form-input
 include _mixins/divider/divider
 include _mixins/button/button
+include _mixins/static-content/static-content
 
 block body
 
   .container.sg-container
-   form.max-w-lg.mx-auto.px-4
+
+    +header
+
+    form.max-w-md.mx-auto.px-4
       h1.text-3xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Password', 'password', 'password')
+          .mt-3
+            +password-validations(contentData.formData.passwordValidations)
 
       h1.text-3xl.text-fit-default.mt-8.mb-4 Business Information
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +floatingLabelInput('Company Name', 'text', 'companyname', 'error', 'That seems like a made up company name. Try again.')
-
+          if error
+            +floatingLabelInput('Company Name', 'text', 'companyname', 'error', 'That seems like a made up company name. Try again.')
+          else
+            +floatingLabelInput('Company Name', 'text', 'companyname')
 
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Business Address', 'text', 'businessaddress')
@@ -48,16 +56,18 @@ block body
           else
             +floatingLabelInput('Business Website (Optional)', 'text', 'businesswebsite')
         .item(class="w-full sm:w-1/2")
-          if error
-            +floatingLabelInput('Organization Type', 'text', 'organizationtype', 'error', 'This is a genuine error message.')
-          else
-            +floatingLabelInput('Organization Type', 'text', 'organizationtype')
+
+          +floatingSelect('Organization Type', 'organizationtype')
+            option Corporation
+            option Partnership
+            option Limited Partnership
+            option Proprietorship
 
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Years in business', 'number', 'yearsinbusiness')
 
       +radio-question(
-        'Is your business eCommerce exclusive??', 
+        'Is your business eCommerce exclusive?',
         'ecommerceExclusive', 
         ['Yes', 'No'])
 
@@ -84,5 +94,19 @@ block body
 
       +divider
 
-      .text-center.mb-16
+      h1.text-3xl.text-fit-default.mt-8.mb-4 One last thing...
+      .stack.mb-2
+        .item(class="w-full sm:w-1/2")
+          +floatingLabelInput('Referral code (optional)', 'text', 'referralcode')
+        .item(class="w-full sm:w-1/2")
+          +floatingSelect('How did you hear about us?', 'howdidyouhearaboutus')
+            option Advertisement
+            option Direct Mail
+            option In the News
+
+      +divider
+
+      .text-center.mb-16.mt-10
         +floatingButton('Continue')
+
+    +footer
