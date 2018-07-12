@@ -12,10 +12,27 @@ $('.clear-field').on("click",function(){
 
 });
 
+$('.show-password').on('click', function() {
+  var passwordField = $(this).parent().find('input');
+  if (passwordField.attr('type') === 'password') {
+    passwordField.attr('type', 'text');
+    $(this).text('Hide');
+  } else {
+    passwordField.attr('type', 'password');
+    $(this).text('Show');
+  }
+});
 
 $(function(){
   $(".input-group input").bind("checkval",function(){
     var clearButton = $(this).next('.clear-field');
+    var showPasswordButton = $(this).next('.show-password');
+
+    if (this.value.length > 0) {
+      showPasswordButton.removeClass('opacity-0')
+    } else {
+      showPasswordButton.addClass('opacity-0')
+    }
 
     if(this.value !== ""){
       clearButton.removeClass('opacity-0')
@@ -27,7 +44,6 @@ $(function(){
 
   }).focusout(function(){
     $(this).next('.clear-field').addClass('opacity-0');
-
   }).on("focus",function(){
     $(this).trigger("checkval");
 

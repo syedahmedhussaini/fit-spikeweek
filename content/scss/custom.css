@@ -9,13 +9,13 @@
   appearance: none;
 }
 
-a {
-  @apply font-sans text-base text-blue no-underline;
+a, a:link, a:visited  {
+  @apply font-sans text-blue no-underline;
 }
 
 span.separator:before {
   content: "•";
-  @apply text-100 px-1;
+  @apply text-100;
 }
 
 .sg-container {
@@ -201,15 +201,26 @@ button.primary {
 }
 
 .password-checkbox input:checked ~ label {
-  @apply text-green
+  @apply text-green;
 }
 
 .password-checkbox input:checked ~ span {
-  @apply border-fit-green
+  @apply border-fit-green;
 }
 
 .password-checkbox input:checked ~ span i {
   top: -4px;
-  left: 1px;
-  @apply block
+  @apply block pin-l;
+}
+
+.checkbox-item input:checked ~ span {
+  @apply border-solid;
+}
+
+.checkbox-item input:checked ~ span i {
+  @apply block;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
 }
