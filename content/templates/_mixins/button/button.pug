@@ -1,7 +1,7 @@
-mixin button(text)
-  button.primary.text-white.px-10.h-12.w-64.rounded.uppercase.bg-fit-blue.font-sans.font-bold.text-xl.tracking-wide(class!=attributes.class)
-    = text
-
-mixin floatingButton(text)
-  button.primary.text-white.px-10.h-14.w-64.rounded.uppercase.bg-fit-blue.font-sans.font-bold.text-xl.tracking-wide(class!=attributes.class)
-    = text
+mixin button(text, inputStyle)
+  if inputStyle === 'floating'
+    button.primary.text-white.px-10.h-14.w-64.rounded.uppercase.bg-fit-blue.font-sans.font-bold.text-xl.tracking-wide(class!=attributes.class)
+      = text
+  else
+    button.primary.text-white.px-10.h-12.w-64.rounded.uppercase.bg-fit-blue.font-sans.font-bold.text-xl.tracking-wide(class!=attributes.class)
+      = text

@@ -1,66 +1,68 @@
-mixin input(label, type, name, inputState, errorMessage)
-
-  .input-group(class!=attributes.class)
-    label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
-    .relative.block
-      input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest error" : "bg-fit-grey-5")
-      if name === 'password'
-        span.opacity-0.text-xs.pin-y.pin-r.absolute.show-password.cursor-pointer.mt-4.mr-4.uppercase.text-blue.font-bold Show
-      else
-        i.opacity-0.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
-
-    if block
-      block
-    if inputState === 'error'
-      p.text-red.text-xs.my-1.leading-normal= errorMessage
-
-
-mixin floatingLabelInput(label, type, name, inputState, errorMessage)
-  .input-field.floating-label.inactive(class= inputState ==="error" ? "error" : "")
-    label(for=name)= label
-    .relative.block
-      input(type=type id=name name=name)
-      i.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer(class='-mt-2')
-      
-
-  if block
-    block
-  if inputState === 'error'
-    p.text-red.text-xs.my-1.leading-normal.error-message= errorMessage
-
-
-
-mixin select(label, name, inputState)
-  .input-group
-    label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
-    .relative.block
-      select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
-        option Select
-        block
-      .pointer-events-none.absolute.pin-y.pin-r.flex.items-center.px-2(for=name class= inputState ==="error" ? "text-red" : "text-40")
-        svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
-          path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-    if inputState === 'error'
-      p.text-red.text-sm.my-1.leading-normal 
-        = label
-        |   must be selected.
-
-mixin floatingSelect(label, name, inputState)
-  .bg-white.border-fit-grey-10.border.rounded-lg.px-3.py-1.shadow-inner(class='hover:border-fit-blue hover:no-shadow')
-    label.text-xs(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
-    .relative.block
-      select.bg-transparent.pb-2.text-lg.pr-8.w-full.appearance-reset(id=name name=name)
-        option Select
-        block
-      i.fa.fa-angle-down.text-xl.text-blue.pin-y.pin-r.absolute.pointer-events-none(class='-mt-2')
-
-
-    if inputState === 'error'
-      p.text-red.text-sm.my-1.leading-normal 
-        = label
-        |   must be selected.
-
+mixin input(label, type, name, inputStyle, inputState, errorMessage)
+  if inputStyle === 'floating'
+    .input-field.floating-label.inactive(class= inputState ==="error" ? "error" : "")
+      label(for=name)= label
+      .relative.block
+        input(type=type id=name name=name)
+        i.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer(class='-mt-2')
         
+
+    if inputState === 'error'
+      p.text-red.text-xs.my-1.leading-normal.error-message= errorMessage
+    
+    else
+      if block
+        block
+
+  else
+    .input-group(class!=attributes.class)
+      label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
+      .relative.block
+        input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest error" : "bg-fit-grey-5")
+        if name === 'password'
+          span.opacity-0.text-xs.pin-y.pin-r.absolute.show-password.cursor-pointer.mt-4.mr-4.uppercase.text-blue.font-bold Show
+        else
+          i.opacity-0.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
+
+
+      if inputState === 'error'
+        p.text-red.text-xs.my-1.leading-normal= errorMessage
+      
+      else
+        if block
+          block
+
+mixin select(label, name, inputStyle, inputState)
+  if inputStyle === 'floating'
+    .bg-white.border-fit-grey-10.border.rounded-lg.px-3.py-1.shadow-inner(class='hover:border-fit-blue hover:no-shadow')
+      label.text-xs(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
+      .relative.block
+        select.bg-transparent.pb-2.text-lg.pr-8.w-full.appearance-reset(id=name name=name)
+          option Select
+          block
+        i.fa.fa-angle-down.text-xl.text-blue.pin-y.pin-r.absolute.pointer-events-none(class='-mt-2')
+
+    if inputState === 'error'
+      p.text-red.text-xs.my-1.leading-normal 
+        = label
+        |   must be selected.
+
+
+  else
+    .input-group
+      label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
+      .relative.block
+        select.input-field.select-input-field.px-3.py-3.text-lg.pr-8.appearance-reset(id=name name=name)
+          option Select
+          block
+
+        i.fa.fa-angle-down.text-xl.text-blue.pin-y.pin-r.absolute.pointer-events-none.my-3.mx-2
+
+      if inputState === 'error'
+        p.text-red.text-xs.my-1.leading-normal 
+          = label
+          |   must be selected.
+
 
 
 
@@ -90,4 +92,4 @@ mixin password-validations(validations)
       input.appearance-reset(type="checkbox" id=validation.id checked=validation.active)
       span.inline-block.h-3.w-3.border.border-fit-grey-dark.rounded-full.-mb-px.relative
         i.hidden.fa.fa-check.text-green.text-sm.absolute
-      label.text-xs.text-80= validation.title
+      label.text-xs.text-80.pointer-events-none(for=validation.id)= validation.title

@@ -11,11 +11,14 @@ block body
 
     +header
 
-    form.max-w-md.mx-auto.px-4
+    form.max-w-lg.mx-auto.px-4
       h1.text-3xl.text-fit-default.mt-8.mb-4 Password creation
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +input('Password', 'password', 'password')
+          if floatingLabels
+            +input('Password', 'password', 'password', 'floating')
+          else
+            +input('Password', 'password', 'password')
           .mt-3
             +password-validations(contentData.formData.passwordValidations)
 
@@ -23,27 +26,66 @@ block body
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
-            +input('Company Name', 'text', 'companyname', 'error', 'That seems like a made up company name. Try again.')
+            if floatingLabels
+              +input('Company Name', 'text', 'companyname', 'floating', 'error', 'That seems like a made up company name. Try again.')
+            else
+              +input('Company Name', 'text', 'companyname', 'standard', 'error', 'That seems like a made up company name. Try again.')
+              
+          else if floatingLabels
+            +input('Company Name', 'text', 'companyname', 'floating')
           else
-            +input('Company Name', 'text', 'companyname')
+            +input('Company Name', 'text', 'companyname', 'standard')
 
         .item(class="w-full sm:w-1/2")
-          +input('Business Address', 'text', 'businessaddress')
+          if error
+            if floatingLabels
+              +input('Legal Business name', 'text', 'legalbusinessname', 'floating', 'error', 'That seems like a made up company name. Try again.')
+            else
+              +input('Legal Business name', 'text', 'legalbusinessname', 'standard', 'error', 'That seems like a made up company name. Try again.')
+
+          else if floatingLabels
+            +input('Legal Business name', 'text', 'legalbusinessname', 'floating')
+
+          else
+            +input('Legal Business name', 'text', 'legalbusinessname')
+
         .item(class="w-full sm:w-1/2")
-          +input('City', 'text', 'city')
+          if floatingLabels
+            +input('Business Address', 'text', 'businessaddress', 'floating')
+          else
+            +input('Business Address', 'text', 'businessaddress', 'standard')
+
         .item(class="w-full sm:w-1/2")
-          +input('Legal Business name', 'text', 'legalbusinessname')
+          if floatingLabels
+            +input('City', 'text', 'city', 'floating')
+          else
+            +input('City', 'text', 'city')
+
+
         .item(class="w-full sm:w-1/2")
-          +input('Business Address Line 2', 'text', 'businessaddress2')
+          if floatingLabels
+            +input('Business Address Line 2', 'text', 'businessaddress2', 'floating')
+          else
+            +input('Business Address Line 2', 'text', 'businessaddress2')
+
         .stack(class="w-full sm:w-1/2") 
           .item(class="w-2/3")
-            +select('Province', 'province')
-              option Alberta
-              option Ontario
-              option Quebec 
+            if floatingLabels
+              +select('Province', 'province', 'floating')
+                option Alberta
+                option Ontario
+                option Quebec 
+            else
+              +select('Province', 'province')
+                option Alberta
+                option Ontario
+                option Quebec 
 
           .item(class="w-1/3")
-            +input('Post Code', 'text', 'postal')  
+            if floatingLabels
+              +input('Post Code', 'text', 'postal', 'floating')  
+            else
+              +input('Post Code', 'text', 'postal')  
 
 
       +divider
@@ -52,19 +94,50 @@ block body
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
-            +input('Business Website (Optional)', 'text', 'businesswebsite', 'error', 'Cannot be blank')
+            if floatingLabels
+              +input('Business Website (Optional)', 'text', 'businesswebsite', 'floating', 'error', 'Cannot be blank')
+            else
+              +input('Business Website (Optional)', 'text', 'businesswebsite', 'standard', 'error', 'Cannot be blank')
+
+          else if floatingLabels
+            +input('Business Website (Optional)', 'text', 'businesswebsite', 'floating')
           else
             +input('Business Website (Optional)', 'text', 'businesswebsite')
-        .item(class="w-full sm:w-1/2")
 
-          +select('Organization Type', 'organizationtype')
-            option Corporation
-            option Partnership
-            option Limited Partnership
-            option Proprietorship
+        .item(class="w-full sm:w-1/2")
+          if error
+            if floatingLabels
+              +select('Organization Type', 'organizationtype', 'floating', 'error')
+                option Corporation
+                option Partnership
+                option Limited Partnership
+                option Proprietorship
+
+            else
+              +select('Organization Type', 'organizationtype', 'standard', 'error')
+                option Corporation
+                option Partnership
+                option Limited Partnership
+                option Proprietorship
+
+          else if floatingLabels
+            +select('Organization Type', 'organizationtype', 'floating')
+              option Corporation
+              option Partnership
+              option Limited Partnership
+              option Proprietorship
+          else
+            +select('Organization Type', 'organizationtype')
+              option Corporation
+              option Partnership
+              option Limited Partnership
+              option Proprietorship
             
         .item(class="w-full sm:w-1/2")
-          +input('Years in business', 'number', 'yearsinbusiness')
+          if floatingLabels
+            +input('Years in business', 'number', 'yearsinbusiness', 'floating')
+          else
+            +input('Years in business', 'number', 'yearsinbusiness')
 
       +radio-question(
         'Is your business eCommerce exclusive?',
@@ -73,9 +146,17 @@ block body
 
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
-          +input('Typical no. of sales per week', 'tel', 'salesperweek')
+          if floatingLabels
+            +input('Typical no. of sales per week', 'tel', 'salesperweek', 'floating')
+          else
+            +input('Typical no. of sales per week', 'tel', 'salesperweek')
+
         .item(class="w-full sm:w-1/2")
-          +input('Average transaction size', 'number', 'avgtransactionsize')
+          if floatingLabels
+            +input('Average transaction size', 'number', 'avgtransactionsize', 'floating')
+
+          else
+            +input('Average transaction size', 'number', 'avgtransactionsize')
 
       +radio-question(
         'Do you have future plans to expand your business?', 
@@ -97,16 +178,30 @@ block body
       h1.text-3xl.text-fit-default.mt-8.mb-4 One last thing...
       .stack.mb-2
         .item(class="w-full sm:w-1/2")
-          +input('Referral code (optional)', 'text', 'referralcode')
+          if floatingLabels
+            +input('Referral code (optional)', 'text', 'referralcode', 'floating')
+          else
+            +input('Referral code (optional)', 'text', 'referralcode')
+
         .item(class="w-full sm:w-1/2")
-          +select('How did you hear about us?', 'howdidyouhearaboutus')
-            option Advertisement
-            option Direct Mail
-            option In the News
+          if floatingLabels
+            +select('How did you hear about us?', 'howdidyouhearaboutus', 'floating')
+              option Advertisement
+              option Direct Mail
+              option In the News
+          else
+            +select('How did you hear about us?', 'howdidyouhearaboutus')
+              option Advertisement
+              option Direct Mail
+              option In the News
 
       +divider
 
       .text-center.mb-16.mt-10
-        +button('Continue')
+        if floatingLabels
+          +button('Continue', 'floating')
+
+        else
+          +button('Continue')
 
     +footer

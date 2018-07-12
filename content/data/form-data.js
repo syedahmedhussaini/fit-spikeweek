@@ -29,6 +29,27 @@ const formData = {
     }
   ],
 
+  formFields: [
+    {
+      label: 'Business Address',
+      type: 'text',
+      name: 'businessAddress'
+    },
+
+    {
+      label: 'Years in Business',
+      type: 'number',
+      name: 'yearsInBusiness'
+    },
+    
+    {
+      label: 'Organization Type',
+      type: 'select',
+      name: 'orgType'
+    }
+
+  ],
+
   passwordValidations: [
     {
       title: 'Min. 8 characters',
