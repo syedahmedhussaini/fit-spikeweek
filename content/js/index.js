@@ -30,6 +30,7 @@ $(function(){
 
   }).on("focus",function(){
     $(this).trigger("checkval");
+    console.log('test');
 
   });;
 });

@@ -9,7 +9,7 @@ mixin input(label, type, name, inputState, errorMessage)
     if block
       block
     if inputState === 'error'
-      p.text-red.text-xs.my-2.leading-normal= errorMessage
+      p.text-red.text-xs.my-1.leading-normal= errorMessage
 
 
 mixin floatingLabelInput(label, type, name, inputState, errorMessage)
@@ -23,7 +23,7 @@ mixin floatingLabelInput(label, type, name, inputState, errorMessage)
   if block
     block
   if inputState === 'error'
-    p.text-red.text-xs.my-2.leading-normal.error-message= errorMessage
+    p.text-red.text-xs.my-1.leading-normal.error-message= errorMessage
 
 
 
@@ -38,7 +38,7 @@ mixin select(label, name, inputState)
         svg.fill-current.h-4.w-4(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 20 20')
           path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
     if inputState === 'error'
-      p.text-red.text-sm.my-2.leading-normal 
+      p.text-red.text-sm.my-1.leading-normal 
         = label
         |   must be selected.
 
@@ -53,7 +53,7 @@ mixin floatingSelect(label, name, inputState)
 
 
     if inputState === 'error'
-      p.text-red.text-sm.my-2.leading-normal 
+      p.text-red.text-sm.my-1.leading-normal 
         = label
         |   must be selected.
 

@@ -9,12 +9,12 @@ block body
   .container.sg-container
    form.max-w-lg.mx-auto.px-4
       h1.text-3xl.text-fit-default.mt-8.mb-4 Password creation
-      .stack.mb-4
+      .stack
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Password', 'password', 'password')
 
       h1.text-3xl.text-fit-default.mt-8.mb-4 Business Information
-      .stack.mb-4
+      .stack
         .item(class="w-full sm:w-1/2")
           +floatingLabelInput('Company Name', 'text', 'companyname', 'error', 'That seems like a made up company name. Try again.')
 
@@ -41,19 +41,16 @@ block body
       +divider
 
       h1.text-3xl.text-fit-default.mt-8.mb-4 Business Details
-      .stack.mb-4
-        .item(class="w-full sm:w-1/2")
-          if error
-            +floatingLabelInput('Business Website (Optional)', 'text', 'businesswebsite', 'error', 'Cannot be blank')
-          else
-            +floatingLabelInput('Business Website (Optional)', 'text', 'businesswebsite')
-        .item(class="w-full sm:w-1/2")
+      .stack
+        .item.floated(class="w-full sm:w-1/2")
+          +floatingLabelInput('Business Website (Optional)', 'text', 'businesswebsite', 'error', 'Cannot be blank')
+        .item.floated(class="w-full sm:w-1/2")
           if error
             +floatingLabelInput('Organization Type', 'text', 'organizationtype', 'error', 'This is a genuine error message.')
           else
             +floatingLabelInput('Organization Type', 'text', 'organizationtype')
 
-        .item(class="w-full sm:w-1/2")
+        .item.floated(class="w-full sm:w-1/2")
           +floatingLabelInput('Years in business', 'number', 'yearsinbusiness')
 
       +radio-question(

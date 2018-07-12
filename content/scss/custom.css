@@ -70,7 +70,7 @@ h3 {
 }
 
 input:hover, input:active, input:focus, select:hover, select:active, select:focus {
-  @apply outline-none;
+  @apply outline-none shadow-none;
 
 }
 
@@ -146,6 +146,7 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
   @apply
     relative
     text-xs
+    text-60
     mb-1;
 
   }
@@ -179,7 +180,11 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
 }
 
 .stack .item {
-  @apply mb-8
+  @apply mb-4
+}
+
+.stack .item.floated {
+  @apply mb-3
 }
 
 .stack .item.w-1\/3 {
