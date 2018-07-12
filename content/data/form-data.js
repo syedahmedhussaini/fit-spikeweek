@@ -70,6 +70,25 @@ const formData = {
       type: 'tel',
       name: 'sin'
     },
+
+    {
+      label: 'Fake field 1',
+      type: 'tel',
+      name: 'ff1'
+    },
+
+    {
+      label: 'Fake field 2',
+      type: 'tel',
+      name: 'ff2'
+    },
+
+    {
+      label: 'Insurance Number',
+      type: 'tel',
+      name: 'sin2'
+    },
+
   
     {
       label: 'Your Role',

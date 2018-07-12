@@ -1,8 +1,7 @@
 'use strict';
 
 let exampleObject = {
-  fruits: ['banana', 'apple'],
-  veggies: ['lettuce', 'tomato']
+  uiStates: ['floating', 'floating']
 };
 
 module.exports = exampleObject;

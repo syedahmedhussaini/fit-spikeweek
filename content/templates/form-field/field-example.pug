@@ -10,7 +10,7 @@ block body
       .stack.mb-4
         .item(class="w-full sm:w-1/2")
           if error
-            +input('Password', 'password', 'password', 'error', 'Here is a sample error message')
+            +input('Password', 'password', 'password', 'default', 'error', 'Here is a sample error message')
           else
             +input('Password', 'password', 'password', 'default')
 

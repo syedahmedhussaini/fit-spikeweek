@@ -69,6 +69,16 @@ block body
             +input('Business Address Line 2', 'text', 'businessaddress2')
 
         .stack(class="w-full sm:w-1/2") 
+          .item(class="w-1/3")
+            +input('Date of birth', 'text', 'field1')
+          .item(class="w-1/3")
+            +input('Field 2', 'text', 'field2')
+          .item(class="w-1/3")
+            +input('Field 3', 'text', 'field3')
+
+
+
+        .stack(class="w-full sm:w-1/2") 
           .item(class="w-2/3")
             if floatingLabels
               +select('Province', 'province', 'floating')
