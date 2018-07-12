@@ -4,7 +4,10 @@ mixin input(label, type, name, inputState, errorMessage)
     label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
     .relative.block
       input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest error" : "bg-fit-grey-5")
-      i.opacity-0.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
+      if name === 'password'
+        span.opacity-0.text-xs.pin-y.pin-r.absolute.show-password.cursor-pointer.mt-4.mr-4.uppercase.text-blue.font-bold Show
+      else
+        i.opacity-0.fa.fa-times-circle-o.text-xl.text-blue.pin-y.pin-r.absolute.clear-field.cursor-pointer.mt-4.mr-2
 
     if block
       block
@@ -60,18 +63,23 @@ mixin floatingSelect(label, name, inputState)
         
 
 
+
 mixin radio-question(question, name, options)
   fieldset.mb-6(role=radiogroup)
     legend.mb-3.leading-normal= question
     each option in options
-      label.block.leading-normal(role=radio)
-        input.mb-2.mr-2(type="radio" name=name value=option)
+      label.radio-item.block.leading-normal.flex.items-center.mb-1(role=radio)
+        input.appearance-reset(type="radio" name=name value=option)
+        span.radio.inline-block.h-5.w-5.border.rounded-full.border-fit-blue.mr-3.flex-center
+          span.hidden.h-3.w-3.bg-fit-blue.rounded-full
         span.text-80.text-sm= option
 
 mixin checkbox(title, label, name)
-  label.block.ml-5.mb-6.leading-normal(for=name)
-    input.float-left.-ml-5.mt-1(type="checkbox" id=name name=name)
-    span.block.font-bold.text-80.mb-1.mr-1.leading-tight.text-sm
+  label.block.checkbox-item.ml-8.mb-6.leading-normal(for=name)
+    input.appearance-reset.float-left(type="checkbox" id=name name=name)
+    span.checkbox.float-left.-ml-8.w-5.h-5.mt-1.border.border-dashed.rounded-sm.border-fit-blue.flex-center
+      i.hidden.fa.fa-check.text-80.text-white
+    span.block.font-bold.text-80.leading-tight.text-sm
       = title
     span.block.text-80.leading-normal.text-sm
       = label
@@ -79,7 +87,7 @@ mixin checkbox(title, label, name)
 mixin password-validations(validations)
   each validation in validations
     .password-checkbox.mt-2
-      input.hidden(type="checkbox" id=validation.id checked=validation.active)
-      span.inline-block.h-3.w-3.border.border-fit-grey-dark.rounded-lg.-mb-px.relative
+      input.appearance-reset(type="checkbox" id=validation.id checked=validation.active)
+      span.inline-block.h-3.w-3.border.border-fit-grey-dark.rounded-full.-mb-px.relative
         i.hidden.fa.fa-check.text-green.text-sm.absolute
       label.text-xs.text-80= validation.title

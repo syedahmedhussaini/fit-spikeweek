@@ -9,13 +9,17 @@
   appearance: none;
 }
 
-a {
-  @apply font-sans text-base text-blue no-underline;
+h1 {
+  @apply font-display tracking-normal-wide;
+}
+
+a, a:link, a:visited  {
+  @apply font-sans text-blue no-underline;
 }
 
 span.separator:before {
   content: "•";
-  @apply text-100 px-1;
+  @apply text-100;
 }
 
 .sg-container {
@@ -205,16 +209,41 @@ button.primary {
   
 }
 
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+/* PASSWORD CHECKBOXES */
+
 .password-checkbox input:checked ~ label {
-  @apply text-green
+  @apply text-green;
 }
 
 .password-checkbox input:checked ~ span {
-  @apply border-fit-green
+  @apply border-fit-green;
 }
 
 .password-checkbox input:checked ~ span i {
   top: -4px;
-  left: 1px;
-  @apply block
+  @apply block pin-l;
+}
+
+/* CHECKBOXES FOR VERTICALS */
+
+.checkbox-item input:checked ~ span.checkbox {
+  @apply border-solid bg-fit-blue;
+}
+
+.checkbox-item input:checked ~ span.checkbox i {
+  @apply block;
+}
+
+/* RADIO BUTTONS */
+
+.radio-item input[type="radio"]:checked ~ span.radio {
+  @apply bg-white;
+}
+
+.radio-item input[type="radio"]:checked ~ span.radio span {
+  @apply block;
 }

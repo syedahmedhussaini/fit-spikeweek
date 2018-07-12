@@ -1,24 +1,25 @@
 mixin header
-  header.h-24.border-b-4.border-fit-green.mb-20.flex.flex-row.justify-between
-    span
-      img.w-48(src="images/logo.png")
-    span.pr-16
-      h1.text-5xl.text-100 Partner Application
+  header.h-24.border-b-4.border-fit-green.mb-20
+    .flex.items-center.justify-between
+      img.h-16(src="images/logo.png")
+      h1.pr-4.text-xl(class="lg:pr-24 md:pr-10 lg:text-5xl md:text-3xl") Partner Application
 
 mixin footer
-  footer.mt-32.text-blue
-    hr.bg-grey-light.h-px.my-4.mx-16
+  footer.mt-32
+    hr.bg-grey-light.h-px.my-8(class="w-4/5")
 
-    .max-w-sm.mx-auto.text-center
-      i.fa.fa-phone.px-6
-        a(href='tel:18885363025') 1-888-536-3025
-      i.fa.fa-envelope-o.px-6
-        a(href='mailto:service@financeit.io') service@financeit.io
-
-      p.py-6.text-base.text-blue Francais
+    .max-w-sm.mx-auto.text-center.text-blue.text-sm(class="md:text-base")
+      span.px-3
+        i.fa.fa-phone
+        a(href='#') 1-888-536-3025
+      span.px-3
+        i.fa.fa-envelope-o
+        a(href='#') service@financeit.io
+      .py-4
+        a(href='#') Francais
         span.separator
-          span Privacy Policy &amp; Terms
+        a(href='#') Privacy Policy &amp; Terms
         span.separator
-          span Financeit Status
+        a(href='#') Financeit Status
 
       p.text-100.text-xs.uppercase.font-bold © 2018 Financeit Canada Inc.
