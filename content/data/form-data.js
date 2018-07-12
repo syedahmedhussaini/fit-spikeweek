@@ -41,11 +41,40 @@ const formData = {
       type: 'number',
       name: 'yearsInBusiness'
     },
-    
+  ],
+
+  signUpForm: [
     {
-      label: 'Organization Type',
+      label: 'Your Position',
+      type: 'text',
+      name: 'yourPosition'
+    },
+
+    {
+      label: 'First Name',
+      type: 'text',
+      name: 'firstName'
+    },
+    {
+      label: 'Last Name',
+      type: 'text',
+      name: 'lastName'
+    },
+    {
+      label: 'Date of Birth',
+      type: 'text',
+      name: 'dob'
+    },
+    {
+      label: 'Social Insurance Number',
+      type: 'tel',
+      name: 'sin'
+    },
+  
+    {
+      label: 'Your Role',
       type: 'select',
-      name: 'orgType'
+      name: 'yourRole'
     }
 
   ],

@@ -15,7 +15,7 @@ block body
 
       h1.text-3xl.text-fit-default.mt-8.mb-4 Business Information
       .stack.mb-4
-        each formField in contentData.formData.formFields
+        each formField in contentData.formData.signUpForm
           .item(class="w-full sm:w-1/2")
             if formField.type === 'select'
               if floatingLabels
@@ -35,7 +35,6 @@ block body
             else
               if floatingLabels
                 +input(formField.label, formField.type, formField.name, 'floating')
-
               else
                 +input(formField.label, formField.type, formField.name, 'standard')
 

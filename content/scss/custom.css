@@ -14,8 +14,10 @@ h1 {
 }
 
 a, a:link, a:visited  {
-  @apply font-sans text-blue no-underline;
+  /* @apply font-sans text-blue no-underline; */
 }
+
+
 
 span.separator:before {
   content: "•";
