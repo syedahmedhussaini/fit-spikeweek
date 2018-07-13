@@ -60,7 +60,7 @@ h3 {
   @apply 
     appearance-none 
     shadow-none
-    border-fit-grey-10
+    border-grey-50
     w-full
     block
     border
@@ -84,32 +84,32 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
 
   @apply
     outline-none
-    border-fit-blue
+    border-blue
     shadow-none
     text-100;
 }
 
 .input-field.error:focus, .input-field.error:hover {
-  @apply border-fit-red;
+  @apply border-red;
 }
 
 /* Floating labels */
 
 .floating-label {
-  @apply bg-fit-grey-5;
+  @apply bg-grey-50;
 }
 .floating-label.inactive {
   @apply 
     py-4
     px-3
-    bg-fit-grey-5
+    bg-grey-25
     rounded-lg
     cursor-pointer
     overflow-hidden;
 }
 
 .floating-label.inactive.error {
-  @apply bg-fit-red-lightest;
+  @apply bg-red-10;
 }
 
 
@@ -167,17 +167,17 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
 
 
 .floating-label.error {
-  @apply bg-fit-red-lightest;
+  @apply bg-red-10;
 }
 .floating-label.error label {
   @apply text-red;
 }
 .floating-label.error.active {
-  @apply border-fit-red;
+  @apply border-red;
 }
 
 .floating-label.active {
-  @apply border-fit-blue;
+  @apply border-blue;
 }
 
 
@@ -222,7 +222,7 @@ button.primary {
 }
 
 .password-checkbox input:checked ~ span {
-  @apply border-fit-green;
+  @apply border-green;
 }
 
 .password-checkbox input:checked ~ span i {
@@ -233,7 +233,7 @@ button.primary {
 /* CHECKBOXES FOR VERTICALS */
 
 .checkbox-item input:checked ~ span.checkbox {
-  @apply border-solid bg-fit-blue;
+  @apply border-solid bg-blue;
 }
 
 .checkbox-item input:checked ~ span.checkbox i {

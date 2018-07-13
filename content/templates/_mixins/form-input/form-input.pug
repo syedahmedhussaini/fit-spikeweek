@@ -18,7 +18,7 @@ mixin input(label, type, name, inputStyle, inputState, errorMessage)
     .input-group(class!=attributes.class)
       label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
       .relative.block
-        input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-fit-red-lightest error" : "bg-fit-grey-5")
+        input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-red-10 error" : "bg-grey-50")
         if name === 'password'
           span.opacity-0.text-xs.pin-y.pin-r.absolute.show-password.cursor-pointer.mt-4.mr-4.uppercase.text-blue.font-bold Show
         else
@@ -34,7 +34,7 @@ mixin input(label, type, name, inputStyle, inputState, errorMessage)
 
 mixin select(label, name, inputStyle, inputState)
   if inputStyle === 'floating'
-    .bg-white.border-fit-grey-10.border.rounded-lg.px-3.py-1.shadow-inner(class='hover:border-fit-blue hover:no-shadow')
+    .bg-white.border-fit-grey-10.border.rounded-lg.px-3.py-1.shadow-inner(class='hover:border-blue hover:no-shadow')
       label.text-xs(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
       .relative.block
         select.bg-transparent.pb-2.text-lg.pr-8.w-full.appearance-reset(id=name name=name)
@@ -69,14 +69,14 @@ mixin radio-question(question, name, options)
     each option in options
       label.radio-item.block.leading-normal.flex.items-center.mb-1(role=radio)
         input.appearance-reset(type="radio" name=name value=option)
-        span.radio.inline-block.h-5.w-5.border.rounded-full.border-fit-blue.mr-3.flex-center
-          span.hidden.h-3.w-3.bg-fit-blue.rounded-full
+        span.radio.inline-block.h-5.w-5.border.rounded-full.border-blue.mr-3.flex-center
+          span.hidden.h-3.w-3.bg-blue.rounded-full
         span.text-80.text-sm= option
 
 mixin checkbox(title, label, name)
   label.block.checkbox-item.ml-8.mb-6.leading-normal(for=name)
     input.appearance-reset.float-left(type="checkbox" id=name name=name)
-    span.checkbox.float-left.-ml-8.w-5.h-5.mt-1.border.border-dashed.rounded-sm.border-fit-blue.flex-center
+    span.checkbox.float-left.-ml-8.w-5.h-5.mt-1.border.border-dashed.rounded-sm.border-blue.flex-center
       i.hidden.fa.fa-check.text-80.text-white
     span.block.font-bold.text-80.leading-tight.text-sm
       = title
@@ -85,8 +85,8 @@ mixin checkbox(title, label, name)
 
 mixin password-validations(validations)
   each validation in validations
-    .password-checkbox.mt-2
+    .password-checkbox.mt-1
       input.appearance-reset(type="checkbox" id=validation.id checked=validation.active)
-      span.inline-block.h-3.w-3.border.border-fit-grey-dark.rounded-full.-mb-px.relative
+      span.inline-block.h-3.w-3.border.border-grey.rounded-full.-mb-px.relative
         i.hidden.fa.fa-check.text-green.text-sm.absolute
       label.text-xs.text-80.pointer-events-none(for=validation.id)= validation.title

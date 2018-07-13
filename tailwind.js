@@ -47,10 +47,10 @@ let fontColors = {
   'white': '#ffffff',
 
   // Accent colors
-  'link': '#006be3',
   'red': '#ff0d00',
   'green': '#00b74f',
-  'blue': '#006be3',
+  'blue': 'rgba(0,107,227,1)',
+  'blue-hover': 'rgba(26,96,191,1)',
   
   // Text Grays
   '40':'rgba(35,40,49,0.4)',
@@ -63,6 +63,27 @@ let fontColors = {
 
 let colors = {
   'transparent': 'transparent',
+  'grey-25': 'rgba(181,192,208,0.25)',
+  'grey-50': 'rgba(181,192,208,0.)',
+  'grey-75': 'rgba(181,192,208,0.75)',
+  'grey': 'rgba(181,192,208,1)',
+  'darker-grey': 'rgba(158,166,181,1)',
+
+  'red-10': 'rgba(255,13,0,0.1)',
+  'red': 'rgba(255,13,0,1)',
+
+  'blue-40': 'rgba(0,107,227,0.4)',
+  'blue-60': 'rgba(0,107,227,0.6)',
+  'blue-80': 'rgba(0,107,227,0.8)',
+  'blue': 'rgba(0,107,227,1)',
+  'darker-blue': 'rgba(26,96,191,1)',
+
+  'green-40': 'rgba(0,183,79,0.4)',
+  'green-60': 'rgba(0,183,79,0.6)',
+  'green-80': 'rgba(0,183,79,0.8)',
+  'green': 'rgba(0,183,79,1)',
+  'darker-green': 'rgba(33,163,61,1)',
+
 
   'fit-grey-5': 'rgba(0,37,57,0.05)',
   'fit-grey-10': 'rgba(0,37,57,0.1)',
@@ -72,94 +93,10 @@ let colors = {
   'fit-grey': 'rgba(35,40,49,0.8)',
   'fit-grey-dark': '#4f535a',
 
-  'fit-blue': '#006be3',
-  'fit-blue-darkest': '#002539',
-
-  'fit-red-lightest': '#ffe6e5',
-  'fit-red': '#ff0d00',
-  'fit-green': '#00b74f',
-
   'black': '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
   'white': '#ffffff',
 
-  'red-darkest': '#3b0d0c',
-  'red-darker': '#621b18',
-  'red-dark': '#cc1f1a',
-  'red': '#e3342f',
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
 
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  'orange': '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
-
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
-  'green': '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#20504f',
-  'teal-dark': '#38a89d',
-  'teal': '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
-  'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  'indigo': '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
 }
 
 module.exports = {
