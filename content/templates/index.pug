@@ -3,6 +3,33 @@ extends /templates/_layouts/master
 include ../../core/templates/mixins/render-page-tree
 
 block body
-    div(style="padding: 20px;")
-        +renderPageTree
+    .container.mx-auto
+        h1.font-display Hello Financeit Tech Team
 
+        br
+        br
+        
+        .max-w-sm.rounded.overflow-hidden.shadow-lg
+            img.w-full(src='https://tailwindcss.com/img/card-top.jpg', alt='Sunset in the mountains')
+            .px-6.py-4
+                .font-bold.text-xl.mb-2 Form Prototype
+                p.text-grey-darker.text-base
+                    | Eoin's Partner Application Prototype. Hide and show the sidebar by pressing CTRL M
+            .px-6.py-4
+                a(href='sample-form.html')
+                    span.inline-block.bg-grey-lighter.rounded-full.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2 Open prototype
+
+        br
+
+        .max-w-sm.rounded.overflow-hidden.shadow-lg
+            .px-6.py-4
+                .font-bold.text-xl.mb-2 Style Guide IPR
+                p.text-grey-darker.text-base
+                    | Style guide IPR
+            .px-6.py-4
+                span.inline-block.bg-grey-lighter.rounded-full.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2
+                    a(href='styleguide/aov-colors.html') Colors
+                span.inline-block.bg-grey-lighter.rounded-full.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2
+                    a(href='styleguide/aov-typography.html') Typography
+                span.inline-block.bg-grey-lighter.rounded-full.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2
+                    a(href='styleguide/form-input.html.html') Form Input documentation

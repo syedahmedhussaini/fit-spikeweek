@@ -96,7 +96,7 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
 /* Floating labels */
 
 .floating-label {
-  @apply bg-grey-50;
+  @apply bg-grey-25;
 }
 .floating-label.inactive {
   @apply 
@@ -177,7 +177,7 @@ input:hover, input:active, input:focus, select:hover, select:active, select:focu
 }
 
 .floating-label.active {
-  @apply border-blue;
+  @apply border-blue
 }
 
 

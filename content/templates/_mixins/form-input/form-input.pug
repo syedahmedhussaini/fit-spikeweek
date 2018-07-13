@@ -18,7 +18,7 @@ mixin input(label, type, name, inputStyle, inputState, errorMessage)
     .input-group(class!=attributes.class)
       label(for=name class= inputState ==="error" ? "text-red" : "text-80")= label
       .relative.block
-        input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-red-10 error" : "bg-grey-50")
+        input.input-field.px-3.py-3.text-lg(type=type id=name name=name class= inputState ==="error" ? "bg-red-10 error" : "bg-grey-25")
         if name === 'password'
           span.opacity-0.text-xs.pin-y.pin-r.absolute.show-password.cursor-pointer.mt-4.mr-4.uppercase.text-blue.font-bold Show
         else

@@ -64,7 +64,7 @@ let fontColors = {
 let colors = {
   'transparent': 'transparent',
   'grey-25': 'rgba(181,192,208,0.25)',
-  'grey-50': 'rgba(181,192,208,0.)',
+  'grey-50': 'rgba(181,192,208,0.5)',
   'grey-75': 'rgba(181,192,208,0.75)',
   'grey': 'rgba(181,192,208,1)',
   'darker-grey': 'rgba(158,166,181,1)',
